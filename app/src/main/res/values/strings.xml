@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidERestaurant</string>
+    <string name="home_welcome">Bienvenue à</string>
+    <string name="home_nameresto">La Trattoria Turcotti</string>
+    <string name="home_starters">Entrées</string>
+    <string name="home_dishes">Plats</string>
+    <string name="home_deserts">Desserts</string>
 </resources>

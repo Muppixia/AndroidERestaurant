@@ -1,31 +1,43 @@
 package fr.isen.turcotti.androiderestaurant
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
+import fr.isen.turcotti.androiderestaurant.databinding.ActivityHomeBinding
 import android.widget.Toast as Toast
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityHomeBinding //Etape 1 : déclaration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setOnClickListener()
+
+        binding = ActivityHomeBinding.inflate(layoutInflater) //Etape 2
+        val view = binding.root //setContentView(binding.root)
+        setContentView(view) //setContentView(R.layout.activity_home) -- Etape 3
+        //val text = findViewById<TextView>(R.id.homeStarters)
+
+        binding.homeStarters.setOnClickListener{
+            goToCategory(getString(R.string.home_starters))
+        }
+
+        binding.homeDishes.setOnClickListener{
+            goToCategory(getString(R.string.home_dishes))
+        }
+
+        binding.homeDeserts.setOnClickListener{
+            goToCategory(getString(R.string.home_deserts))
+        }
     }
 
-    private fun setOnClickListener() {
-        val button = findViewById<Button>(R.id.button)
-        val button2 = findViewById<Button>(R.id.button2)
-        val button3 = findViewById<Button>(R.id.button3)
-        button.setOnClickListener {
-            Toast.makeText(this@MainActivity, "Voici les entrées", Toast.LENGTH_LONG).show()
-        }
-        button2.setOnClickListener {
-            Toast.makeText(this@MainActivity, "Voici les plats", Toast.LENGTH_LONG).show()
-        }
-        button3.setOnClickListener {
-            Toast.makeText(this@MainActivity, "Voici les desserts", Toast.LENGTH_LONG).show()
-        }
+    private fun goToCategory(category:String) {
+        val intent = Intent(this, CategoryActivity::class.java)
+        intent.putExtra("category", category)
+        startActivity(intent)
     }
 
 
