@@ -3,6 +3,7 @@ package fr.isen.turcotti.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -38,6 +39,35 @@ class HomeActivity : AppCompatActivity() {
         val intent = Intent(this, CategoryActivity::class.java)
         intent.putExtra("category", category)
         startActivity(intent)
+    }
+
+    private fun toastMsg(msg: String?) {
+        val toast = Toast.makeText(this, msg, Toast.LENGTH_LONG)
+        toast.show()
+    }
+
+    fun displayEntreesMsg(view: View) {
+        toastMsg("Entrées")
+    }
+
+    fun displayPlatsMsg(view: View) {
+        toastMsg("Plats")
+    }
+
+    fun displayDessertsMsg(view: View) {
+        toastMsg("Desserts")
+    }
+
+    private val tag = "LogHomeActivity"
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(tag, "Sortie de la page d'acceuil")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(tag, "Page d'acceuil détruite")
     }
 
 

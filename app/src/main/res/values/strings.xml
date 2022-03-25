@@ -1,8 +1,14 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">AndroidERestaurant</string>
     <string name="home_welcome">Bienvenue à</string>
     <string name="home_nameresto">La Trattoria Turcotti</string>
     <string name="home_starters">Entrées</string>
     <string name="home_dishes">Plats</string>
     <string name="home_deserts">Desserts</string>
+    <string name="chargement" />
+    <string-array name="entreesList">
+        <item tools:ignore="Typos">item1</item>
+        <item>item2</item>
+        <item>item3</item>
+    </string-array>
 </resources>
