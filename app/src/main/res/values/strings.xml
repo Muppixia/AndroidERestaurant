@@ -11,4 +11,33 @@
         <item>item2</item>
         <item>item3</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="cart">Panier</string>
+    <string name="order">Commander</string>
+    <string name="bleScanPlay">Lancer le Scan BLE</string>
+    <string name="bleScanPause">Scan en cours...</string>
+    <string name="bleScanState">Lancer le Scan BLE</string>
+    <string name="ble_scan_device_error">No device available</string>
+    <string name="panier" />
+    <string name="fake_badge">O</string>
+    <string name="comment_s" />
+    <string name="commentaire_s" />
+    <string name="total">Total</string>
+    <string name="fake_price" />
+    <string name="fake_title" />
+    <string name="x">x</string>
+    <string name="fake_quantity" />
+    <string name="equals">=</string>
+    <string name="cross">❌</string>
+    <string name="fake_comment" />
+    <string name="textview"></string>
+    <string name="ble_scan_device_disconnected">Status : déconnecté</string>
+    <string name="ble_scan_device_connected">Status : connecté</string>
+    <string name="ble_device_characteristic_read">ECRITURE</string>
+    <string name="ble_device_characteristic_write" />
+    <string name="quantity" />
+    <string name="toast"> Commande effectuée </string>
 </resources>

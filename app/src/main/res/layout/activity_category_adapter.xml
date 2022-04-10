@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,27 +12,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/itemImage"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_launcher_background"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_error"
+            app:layout_constraintBottom_toBottomOf="@id/itemView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintTop_toTopOf="@id/itemView"
-            app:layout_constraintBottom_toBottomOf="@id/itemView"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/itemView" />
+
         <TextView
             android:id="@+id/itemText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:textSize="20dp"
-            android:text="dessert"
-            app:layout_constraintStart_toEndOf="@id/itemImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintBottom_toBottomOf="@id/itemView"
+            app:layout_constraintEnd_toStartOf="@+id/priceView"
+            app:layout_constraintStart_toEndOf="@+id/itemImage"
             app:layout_constraintTop_toTopOf="@id/itemView"
-            app:layout_constraintBottom_toBottomOf="@id/itemView"/>
+            app:layout_constraintVertical_bias="0.515"
+            tools:text="itemText" />
+
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="65dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="20dp"
+            android:text="priceView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.548" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

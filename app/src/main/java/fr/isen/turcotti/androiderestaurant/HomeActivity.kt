@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import fr.isen.turcotti.androiderestaurant.ble.BLEScanActivity
 import fr.isen.turcotti.androiderestaurant.databinding.ActivityHomeBinding
 import android.widget.Toast as Toast
 
@@ -32,6 +33,11 @@ class HomeActivity : AppCompatActivity() {
 
         binding.homeDeserts.setOnClickListener{
             goToCategory(getString(R.string.home_deserts))
+        }
+
+        binding.bluetoothButton.setOnClickListener{
+            val intent = Intent(this, BLEScanActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -62,12 +68,12 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        Log.d(tag, "Sortie de la page d'acceuil")
+        Log.d(tag, "Sortie de la page d'accueil")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(tag, "Page d'acceuil détruite")
+        Log.d(tag, "Page d'accueil détruite")
     }
 
 

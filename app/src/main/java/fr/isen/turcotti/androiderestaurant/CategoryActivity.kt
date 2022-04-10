@@ -20,7 +20,8 @@ class CategoryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category)
+        binding =ActivityCategoryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         items = arrayListOf()
 
@@ -36,8 +37,11 @@ class CategoryActivity : AppCompatActivity() {
             intent.putExtra(ITEM_KEY, it)
             startActivity(intent)
         }
-        getDataFromApi(intent.getStringExtra("categorie") ?: "")
+        getDataFromApi(nomCategorie ?: "")
         Log.d("LogApi",items.toString())
+
+
+
     }
 
     private fun getDataFromApi(category: String) {
@@ -52,8 +56,6 @@ class CategoryActivity : AppCompatActivity() {
             { response ->
                 val strResp = response.toString()
                 val dataResult = Gson().fromJson(strResp, DataResult::class.java)
-
-
 
                 val items = dataResult.data.firstOrNull { it.name_fr == category }?.items ?: arrayListOf()
                 binding.categoryList.adapter = CategoryAdapter(items) {
@@ -70,18 +72,18 @@ class CategoryActivity : AppCompatActivity() {
     }
 
     companion object {
-        val ITEM_KEY = "item"
+        const val ITEM_KEY = "item"
     }
 
     private val tag = "LogCategoryActivity"
 
     override fun onStop() {
         super.onStop()
-        Log.d(tag, "Sortie de la page des catégories")
+        Log.d(tag, "Sortie de la page des categories")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(tag, "Page des catégories détruite")
+        Log.d(tag, "Page des categories detruite")
     }
 }

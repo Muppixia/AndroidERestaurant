@@ -2,30 +2,123 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nbCart"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+
+    <TextView
+        android:id="@+id/titleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="240dp"
+        android:text="@string/textview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/detailSlider"
+        android:layout_width="412dp"
+        android:layout_height="365dp"
+        app:layout_constraintBottom_toTopOf="@+id/titleDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/ingredientView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleDetail" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif-black"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/plus"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="90dip"
+        app:layout_constraintBottom_toBottomOf="@+id/nbProduct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toEndOf="@+id/nbProduct"
+        app:layout_constraintTop_toTopOf="@+id/nbProduct" />
+
+    <Button
+        android:id="@+id/minusButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif-black"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:paddingTop="-5dp"
+        android:text="@string/minus"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:cornerRadius="90dip"
+        app:layout_constraintBottom_toBottomOf="@+id/nbProduct"
+        app:layout_constraintEnd_toStartOf="@+id/nbProduct"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nbProduct" />
+
+    <Button
+        android:id="@+id/totalButton"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        app:cornerRadius="90dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0">
+        app:layout_constraintVertical_bias="0.95"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/nbProduct"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/totalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientView"
+        app:layout_constraintVertical_bias="0.181" />
 
-            <TextView
-                android:id="@+id/titreDetail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/chargement" />
-        </LinearLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/cartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:text="Panier"
+        app:layout_constraintBottom_toTopOf="@+id/detailSlider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
