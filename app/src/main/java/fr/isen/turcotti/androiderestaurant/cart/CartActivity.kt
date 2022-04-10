@@ -38,8 +38,6 @@ class CartActivity : AppCompatActivity() {
             CartList(arrayListOf())
         }
 
-
-
         orderButton = findViewById(R.id.orderButton)
         orderButton.setOnClickListener{
             order()
@@ -54,6 +52,10 @@ class CartActivity : AppCompatActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         Toast.makeText(applicationContext, R.string.toast, Toast.LENGTH_SHORT).show()
         startActivity(intent)
+    }
+
+    fun removeItem(cartItem: ItemCart) {
+        cartItem.remove()
     }
 
 }

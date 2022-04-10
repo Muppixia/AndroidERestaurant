@@ -1,15 +1,22 @@
 package fr.isen.turcotti.androiderestaurant
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.google.gson.GsonBuilder
+import fr.isen.turcotti.androiderestaurant.DetailActivity.Companion.getCart
+import fr.isen.turcotti.androiderestaurant.cart.Cart
 import fr.isen.turcotti.androiderestaurant.cart.CartActivity
 import fr.isen.turcotti.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.turcotti.androiderestaurant.model.Item
+import fr.isen.turcotti.androiderestaurant.cart.CartDetail.Companion.getCart
+import java.io.File
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -67,6 +74,10 @@ class DetailActivity : AppCompatActivity() {
                 startActivity(intent)
             })
 
+        totalButton.setOnClickListener(
+            addToCart()
+        )
+
 
     }
 
@@ -85,6 +96,18 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onRestart() {
         super.onRestart()
+    }
+
+    private fun addToCart(): View.OnClickListener? {
+        binding.addToCart.setOnClickListener {
+            currentDish?.let { dish ->
+                val cart = Cart.getCart(this)
+                cart.addItem(dish, count.toInt())
+                cart.save(this)
+                Toast.makeText(this, R.string.added, Toast.LENGTH_SHORT).show()
+                invalidateOptionsMenu()
+            }
+        }
     }
 
 
