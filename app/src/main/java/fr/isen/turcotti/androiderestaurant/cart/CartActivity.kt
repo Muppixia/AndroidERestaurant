@@ -54,8 +54,8 @@ class CartActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun removeItem(cartItem: ItemCart) {
+    /*fun removeItem(cartItem: ItemCart) {
         cartItem.remove()
-    }
+    }*/
 
 }

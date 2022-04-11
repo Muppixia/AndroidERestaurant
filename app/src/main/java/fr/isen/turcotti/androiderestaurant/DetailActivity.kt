@@ -10,7 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.google.gson.GsonBuilder
-import fr.isen.turcotti.androiderestaurant.DetailActivity.Companion.getCart
+import fr.isen.turcotti.androiderestaurant.DetailActivity
 import fr.isen.turcotti.androiderestaurant.cart.Cart
 import fr.isen.turcotti.androiderestaurant.cart.CartActivity
 import fr.isen.turcotti.androiderestaurant.databinding.ActivityDetailBinding
@@ -74,15 +74,12 @@ class DetailActivity : AppCompatActivity() {
                 startActivity(intent)
             })
 
-        totalButton.setOnClickListener(
+        /*totalButton.setOnClickListener(
             addToCart()
-        )
+        )*/
 
 
     }
-
-
-
 
 
     private fun doTotal(item: Item, selected: Float) {
@@ -98,20 +95,19 @@ class DetailActivity : AppCompatActivity() {
         super.onRestart()
     }
 
-    private fun addToCart(): View.OnClickListener? {
-        binding.addToCart.setOnClickListener {
-            currentDish?.let { dish ->
-                val cart = Cart.getCart(this)
-                cart.addItem(dish, count.toInt())
-                cart.save(this)
-                Toast.makeText(this, R.string.added, Toast.LENGTH_SHORT).show()
-                invalidateOptionsMenu()
-            }
+    /*private fun addToCart(): View.OnClickListener? {
+        currentDish?.let { dish ->
+            val cart = Cart.getCart(this)
+            cart.addItem(dish, count.toInt())
+            cart.save(this)
+            Toast.makeText(this, R.string.added, Toast.LENGTH_SHORT).show()
+            invalidateOptionsMenu()
         }
-    }
 
+     */
 
 }
+
 
 
 

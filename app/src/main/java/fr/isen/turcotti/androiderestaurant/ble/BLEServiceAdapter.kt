@@ -1,5 +1,6 @@
 package fr.isen.turcotti.androiderestaurant.ble
 
+import fr.isen.turcotti.androiderestaurant.ble.BLEDeviceActivity
 import android.bluetooth.BluetoothGattCharacteristic
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,13 @@ import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder
 import fr.isen.turcotti.androiderestaurant.R
 
-class BLEServiceAdapter(bleService: MutableList<BLEService>) :
+class BLEServiceAdapter(
+    bleService: List<BLEService>,
+    bleDeviceActivity: BLEDeviceActivity,
+    param: (Any) -> Boolean?,
+    param1: (Any) -> Unit,
+    param2: (Any, Any) -> Unit
+) :
     ExpandableRecyclerViewAdapter<BLEServiceAdapter.ServiceViewHolder, BLEServiceAdapter.CharacteristicViewHolder>(bleService){
 
     class ServiceViewHolder(itemView: View): GroupViewHolder(itemView) {
@@ -59,5 +66,9 @@ class BLEServiceAdapter(bleService: MutableList<BLEService>) :
         group: ExpandableGroup<*>
     ) {
         holder.serviceName.text = group.title
+    }
+
+    fun updateFromChangedCharacteristic(characteristic: BluetoothGattCharacteristic?) {
+
     }
 }

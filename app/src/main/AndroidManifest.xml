@@ -21,22 +21,22 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".cart.CartAdapter"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".cart.CartActivity"
             android:exported="false" />
         <activity
-            android:name=".OrderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ble.BLEServiceActivity"
-            android:exported="false" />
+            android:name=".ble.BLEService"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ble.BLEDeviceActivity"
             android:exported="false" />
         <activity
             android:name=".ble.BLEScanActivity"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".DetailActivity"
             android:exported="false" />

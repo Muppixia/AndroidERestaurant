@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">AndroidERestaurant</string>
+    <string name="app_name">ClaireAndroidERestaurant</string>
     <string name="home_welcome">Bienvenue à</string>
     <string name="home_nameresto">La Trattoria Turcotti</string>
     <string name="home_starters">Entrées</string>
@@ -40,4 +40,6 @@
     <string name="ble_device_characteristic_write" />
     <string name="quantity" />
     <string name="toast"> Commande effectuée </string>
+    <string name="connecting" />
+    <string name="unknown_name" />
 </resources>
